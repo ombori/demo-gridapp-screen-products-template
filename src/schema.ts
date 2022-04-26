@@ -49,6 +49,7 @@ export type Schema = {
 
   /**
    * @title Custom styles
+   * @widget css
    * @default ""
   */
   globalStyles: string;
