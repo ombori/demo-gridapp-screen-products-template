@@ -1,6 +1,6 @@
 # Welcome to [OmboriGrid Platform](https://developer.omborigrid.com/#/getting-started)
 
-This project was bootstrapped with [omg create app](https://developer.omborigrid.com/#/cli/setup).
+This project was bootstrapped with [omg app create](https://developer.omborigrid.com/#/cli/setup).
 
 ## Available Scripts
 
