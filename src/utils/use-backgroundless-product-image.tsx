@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
-import { GridProduct } from '@ombori/grid-products';
+import React, { useEffect } from 'react';
 import { cloneDeep } from 'lodash';
 import { ProductGroup } from '../types'; 
 import { convertFirstProductImageToBackgroundless } from './product-helper';

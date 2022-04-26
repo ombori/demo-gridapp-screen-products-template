@@ -3,8 +3,8 @@ import { removeImageBackground } from '@ombori/grid-media-processing';
 
 const removeImgBackground = async (imgUrl: string) => {
   try {
-    const blobImg = await removeImageBackground({ url: imgUrl });
-    return URL.createObjectURL(blobImg);
+    const { blob } = await removeImageBackground({ url: imgUrl });
+    return URL.createObjectURL(blob);
   } catch(e) {
     console.log(e);
     // Fallback to original image url

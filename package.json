@@ -1,6 +1,6 @@
 {
   "name": "playground-kjell.gridapp-screen-product-template",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "homepage": "./",
   "scripts": {
@@ -35,7 +35,7 @@
     "@emotion/styled": "^11.8.1",
     "@ombori/ga-messaging": "^2.90.2",
     "@ombori/ga-settings": "^2.185.0",
-    "@ombori/grid-media-processing": "^2.205.0",
+    "@ombori/grid-media-processing": "^2.206.0",
     "@ombori/grid-products": "^2.204.0",
     "@ombori/grid-signals-react": "^2.197.0",
     "@testing-library/jest-dom": "^4.2.4",
