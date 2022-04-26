@@ -18,7 +18,6 @@ const animationTransitionDuration = 1;
 
 function App() {
   const settings = useSettings<Settings>();
-  console.log('settings:', settings);
   const productGroup = useBackgroundlessImageProduct(settings?.product);
 
   const animations = useAnimations(settings?.animationType);

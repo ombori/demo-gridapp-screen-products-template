@@ -20,7 +20,7 @@ export const convertFirstProductImageToBackgroundless = async(product: GridProdu
   }
 
   // Use only 1 picture for now
-  const productMediaIndex = catalogPageLocationProduct.findIndex(media => media.catalogType.startsWith('/image'));
+  const productMediaIndex = catalogPageLocationProduct.findIndex(media => media.catalogType.startsWith('image/'));
   const productMedia = productMediaIndex > -1 ? catalogPageLocationProduct[productMediaIndex] : null; 
 
   if (productMedia) {

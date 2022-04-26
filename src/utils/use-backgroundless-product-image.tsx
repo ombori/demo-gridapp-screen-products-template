@@ -5,7 +5,6 @@ import { ProductGroup } from '../types';
 import { convertFirstProductImageToBackgroundless } from './product-helper';
 
 export default function useBackgroundlessImageProduct(gridProduct?: ProductGroup) {
-  console.log('XXXXgridProduct:', gridProduct);
   const [product, setProduct] = React.useState<ProductGroup | null>(null);
 
   useEffect(() => {
