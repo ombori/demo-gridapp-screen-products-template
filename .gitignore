@@ -11,6 +11,8 @@ src/settings
 # testing
 /coverage
 
+.env
+
 # production
 /build
 /build-tmp

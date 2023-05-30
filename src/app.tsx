@@ -4,7 +4,6 @@ import { Keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useSettings } from '@ombori/ga-settings';
 import { Settings } from './types';
-import { getProductName, getProductImage } from './utils/product-helper';
 import useBackgroundlessImageProduct from './utils/use-backgroundless-product-image';
 import useAnimations, {
     zoomKeyframes,
@@ -13,13 +12,14 @@ import useAnimations, {
     fromRightKeyframes,
     fromLeftTextKeyframes
   } from 'utils/animations';
-
+import { useProduct } from './utils/use-product';
+ 
 const animationTransitionDuration = 1;
-
+ 
 function App() {
   const settings = useSettings<Settings>();
-  const productGroup = useBackgroundlessImageProduct(settings?.product);
-
+  const product = useProduct(settings?.product.productId || '');
+  const backgroundlessImage = useBackgroundlessImageProduct(settings?.product.defaultImage || '');
   const animations = useAnimations(settings?.animationType);
 
   const {
@@ -28,12 +28,15 @@ function App() {
     callToAction,
     backgroundColor,
     animationDuration,
-    standardPrice,
+    standardPrice, 
     promoPrice,
     productName,
     productImage,
   } = useMemo(() => {
-    const product = productGroup?.products[0];
+    if (!product) {
+      return {} as any;
+    }
+
     const {
       priceContainerBackgroundColor = '',
       priceContainerTextColor = '',
@@ -61,12 +64,10 @@ function App() {
         animationDuration != null && animationDuration > 2000
           ? animationDuration / 1000
           : 5,
-      productName: productGroup
-        ? getProductName(productGroup)
-        : '',
-      productImage: productGroup ? getProductImage(productGroup) : '',
+      productName: product.productName[0].productName,
+      productImage: backgroundlessImage,
     };
-  }, [settings, productGroup]);
+  }, [settings, product, backgroundlessImage]);
 
   const PriceSection = useMemo(() => {
     if (!standardPrice) {
@@ -95,7 +96,7 @@ function App() {
     );
   }, [priceContainerBackgroundColor, priceContainerTextColor, promoPrice, standardPrice]);
 
-  if (!settings || !productGroup) {
+  if (!settings || !product) {
     return <div>Initializing settings...</div>
   }
 

@@ -1,4 +1,4 @@
-import { GridProduct, CatalogPageLocationProduct } from '@ombori/grid-products';
+import { GridProduct, CatalogPageLocationProduct } from '@ombori/grid-products-client-react';
 
 export enum AnimationTypeEnum {
   FADE = 'fade',
@@ -29,9 +29,9 @@ export type GridProductWithMedia = Omit<GridProduct, 'catalogPageLocationProduct
 export type ProductGroup = {
   productGroupId: string;
   productId: string;
-  products: GridProductWithMedia[];
-  productSourceURL: string;
+  productSourceUrl: string;
   ref: 'grid-product';
+  defaultImage: string;
 };
 
 /**

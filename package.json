@@ -1,6 +1,6 @@
 {
   "name": "playground-kjell.gridapp-screen-product-template",
-  "version": "0.2.3",
+  "version": "0.2.7",
   "private": true,
   "homepage": "./",
   "scripts": {
@@ -11,6 +11,7 @@
     "build": "rimraf build && yarn prodbuild && yarn schema && omg app build",
     "eject": "react-scripts eject",
     "pub": "yarn build && omg app publish",
+    "pub-ombqa": "yarn build && omg app publish",
     "settings": "omg app settings",
     "upload-description": "omg app upload-description",
     "connect": "omg dev ws"
@@ -34,10 +35,10 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@ombori/ga-messaging": "^2.90.2",
-    "@ombori/ga-settings": "^2.185.0",
-    "@ombori/grid-media-processing": "^2.206.0",
-    "@ombori/grid-products": "^2.204.0",
-    "@ombori/grid-signals-react": "^2.197.0",
+    "@ombori/ga-settings": "^3.21.0",
+    "@ombori/grid-media-processing": "^2.206.1",
+    "@ombori/grid-products-client-react": "^3.33.2",
+    "@ombori/grid-signals-react": "^3.22.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -49,7 +50,7 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
-    "@ombori/ga-cli": "^2.193.1",
+    "@ombori/ga-cli": "^3.29.1",
     "@ombori/ts-schema": "^2.92.0",
     "@types/jest": "^24.0.0",
     "@types/lodash": "^4.14.182",
