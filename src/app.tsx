@@ -16,7 +16,7 @@ import { useProduct } from './utils/use-product';
  
 const animationTransitionDuration = 1;
  
-function App() {
+function App({ isActiveItem }: { isActiveItem: boolean }) {
   const settings = useSettings<Settings>();
   const product = useProduct(settings?.product.productId || '');
   const backgroundlessImage = useBackgroundlessImageProduct(settings?.product.defaultImage || '');
@@ -98,6 +98,10 @@ function App() {
 
   if (!settings || !product) {
     return <div>Initializing settings...</div>
+  }
+
+  if (!isActiveItem) {
+    return <div>prep screen</div>;
   }
 
   return (
